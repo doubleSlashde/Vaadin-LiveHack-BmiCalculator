@@ -1,5 +1,8 @@
 package de.doubleslash.vaadin.bmi;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.fieldgroup.Caption;
 import com.vaadin.data.fieldgroup.FieldGroup;
@@ -101,7 +104,8 @@ public class BmiForm extends FormLayout {
     */
    private double calculateBmi(double height, int weight) {
       // bmi = weight / (height * height);
-      return (double) weight / (height * height);
+      double bmi = (double) weight / (height * height);
+      return new BigDecimal(bmi).setScale(2, RoundingMode.HALF_UP).doubleValue();
    }
 
 }
