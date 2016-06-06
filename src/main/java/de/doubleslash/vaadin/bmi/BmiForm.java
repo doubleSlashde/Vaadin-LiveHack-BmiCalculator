@@ -79,7 +79,7 @@ public class BmiForm extends FormLayout {
       System.out.println("Klick!");
 
       try {
-         // validate input , and if successful write it into the bmiData bean
+         // commit validates the input, and if successful writes it into the BmiData bean
          bmiFieldGroup.commit();
 
          double h = bmiData.getHeight();
@@ -92,7 +92,7 @@ public class BmiForm extends FormLayout {
          System.out.println("Größe: " + h);
 
       } catch (FieldGroup.CommitException e) {
-         // thrown if there are validation errors
+         // Exception is thrown if there are validation errors
          System.out.println("Invalid data!");
       }
 
