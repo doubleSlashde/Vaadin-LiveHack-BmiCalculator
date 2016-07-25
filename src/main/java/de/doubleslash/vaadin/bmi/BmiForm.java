@@ -8,7 +8,6 @@ import com.vaadin.data.fieldgroup.Caption;
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.data.fieldgroup.PropertyId;
 import com.vaadin.data.validator.DoubleRangeValidator;
-import com.vaadin.data.validator.IntegerRangeValidator;
 import com.vaadin.data.validator.NullValidator;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
@@ -57,9 +56,7 @@ public class BmiForm extends FormLayout {
    }
 
    private void initLayout() {
-      buCalculate.addClickListener(event -> {
-         buttonClicked();
-      });
+      buCalculate.addClickListener(event -> buttonClicked());
 
       laBmi.setCaption("Dein BMI:");
       // IDs can be set on every component, e.g. to identify UI elements in automated UI tests
@@ -105,7 +102,7 @@ public class BmiForm extends FormLayout {
    private double calculateBmi(double height, int weight) {
       // bmi = weight / (height * height);
       double bmi = (double) weight / (height * height);
-      return new BigDecimal(bmi).setScale(2, RoundingMode.HALF_UP).doubleValue();
+      return BigDecimal.valueOf(bmi).setScale(2, RoundingMode.HALF_UP).doubleValue();
    }
 
 }

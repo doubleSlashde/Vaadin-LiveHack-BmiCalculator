@@ -10,7 +10,7 @@ import com.vaadin.ui.*;
  * The program originates from an 1/2 hour <b>live-hack</b> session during a workshop,
  * to demonstrate how quickly you can come up with a working web app from scratch using Vaadin.
  * <br>
- * So dont't expect it to be "clean" from a code and architectural point of view!
+ * So don't expect it to be "clean" from a code and architectural point of view!
  * Not to mention the missing test cases...! ;-)
  *
  * @author Stefan Waldmann, doubleSlash Net-Business GmbH
